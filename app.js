@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1/todolistDB" , {useNewUrlParser:true});
+mongoose.connect("mongodb+srv://admin-angela:Test123@cluster0.va9uf.mongodb.net/todolistDB" , {useNewUrlParser:true});
 
 
 
@@ -181,6 +181,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT ||3000, function() {
   console.log("Server started on port 3000");
 });
